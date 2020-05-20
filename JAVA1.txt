@@ -1,0 +1,33 @@
+import java.util.Scanner;
+ 
+public class Main {
+ 
+public static void main(String[] args) {
+Scanner giris = new Scanner(System.in);
+int sayi = 0;
+while (sayi != -1) {
+System.out.println("Bir sayi giriniz");
+sayi = giris.nextInt();
+ 
+int toplam = 0;
+String strSayi = "" + sayi;
+for (int i = 0; i < strSayi.length(); i++) {
+int tmpRakam = Integer.parseInt("" + strSayi.charAt(i));
+toplam += faktoriyelHesapla(tmpRakam);
+}
+if (sayi == toplam) {
+System.out.println("Koşul Sağlanıyor : " + toplam+" = "+sayi);
+} else {
+System.out.println("Koşul Saglanmıyor: " + toplam+" != "+sayi);
+}
+}
+}
+ 
+public static int faktoriyelHesapla(int sayi) {
+int sonuc = 1;
+for (int i = 2; i <= sayi; i++) {
+sonuc *= i;
+}
+return sonuc;
+}
+}
